@@ -1,0 +1,36 @@
+<div class="container board">  
+  
+  <div class="row board__header">
+    <div class="board__title">
+      <span><%= link_to @board.name, edit_board_path(@board) %></span>
+    </div>
+
+    <div class="board__search">
+      <%= form_for @board, :url => url_for(action: 'add_sounds', controller: 'boards'), :method => 'POST' do |f| %>
+        <div class="form-group">
+          <%= f.select :sound_ids, [[]], {}, 
+          {multiple: false, class: "selectize"} %>
+          <%= hidden_field_tag(:board_id, @board.id) %>
+
+          <%= f.submit 'Add Sound', class: "btn btn-success" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  
+  <div class="row board__content">
+    <% @sounds.each do |sound| %>
+      <button type="button" class="btn btn-warning board__sound-button">
+        <%= sound.name %>
+      </button>
+    <% end %>
+  </div>
+  
+  <div class="row baord__footer">
+    <div></div>
+  </div>
+</div>
+
+<%= render :partial => 'sounds/modal' %>
+
+<%= link_to 'Back to Boards', boards_path %>

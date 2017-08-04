@@ -1,0 +1,78 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+.board {
+  background: rgba(107, 82, 121, 0.23);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.board__content {
+
+}
+
+.board__footer {
+
+}
+
+.board__header {
+  align-items: center;
+  display: flex;
+  margin-bottom: 15px;
+  padding: 0px 20px;
+}
+
+.board__search {
+  margin-left: auto;
+  .selectize-control {
+    width: 500px;
+    max-width: 500px;
+  }
+  .form-group {
+    display: flex;
+  }
+}
+
+.board__sound-button {
+  display: inline-block;
+  flex-grow: 1;
+  height: 50px;
+  margin: 10px 0 0 2%;  
+  width: 130px;
+}
+
+.board__title {
+  font-size: 32px;
+  margin-right: auto;
+}
+
+.selectize-input > input {
+  opacity: .5 !important;
+}
+
+.selectize-dropdown-content {
+  .option {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    .label {
+      padding: initial;
+      font-family: inherit;
+      font-size: 12px;
+      display: block;
+      color: #303030;
+      opacity: 0.5;
+    }
+    .caption {
+      font-size: 13px;
+      -webkit-font-smoothing: inherit;
+      line-height: 18px;
+    }
+  }
+
+}
+
